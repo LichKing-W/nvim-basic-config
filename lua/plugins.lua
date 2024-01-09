@@ -32,6 +32,13 @@ return require('packer').startup(function()
     -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
     }
+  -- remote ssh
+    use {
+        'nosduco/remote-sshfs.nvim',
+        requires = { {'nvim-telescope/telescope.nvim'} }
+    }
+  -- plenary (needed by remote ssh)
+  use "nvim-lua/plenary.nvim"
   -- dashboard
     use {
         'nvimdev/dashboard-nvim',
