@@ -16,4 +16,5 @@ require("plugin-config.coc")
 require("plugin-config.comment")
 -- require("plugin-config.dashboard") dashboard在plugins.lua中配置好即可
 require("autocmds")
+require("plugin-config.remote-sshfs")
 
