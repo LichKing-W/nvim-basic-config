@@ -14,7 +14,8 @@ return require('packer').startup(function()
   -- treesitter
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- theme
-  use 'folke/tokyonight.nvim'
+  -- use 'folke/tokyonight.nvim'
+  use 'sainnhe/gruvbox-material'
   -- autocom
   use {'neoclide/coc.nvim', branch = 'release'}
   -- ()autocom
@@ -32,13 +33,18 @@ return require('packer').startup(function()
     -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
     }
-  -- remote ssh
-    use {
-        'nosduco/remote-sshfs.nvim',
-        requires = { {'nvim-telescope/telescope.nvim'} }
-    }
   -- plenary (needed by remote ssh)
   use "nvim-lua/plenary.nvim"
+  -- surround
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+    })
   -- dashboard
     use {
         'nvimdev/dashboard-nvim',
