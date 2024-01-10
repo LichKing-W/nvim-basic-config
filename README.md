@@ -5,11 +5,12 @@
 - tree: 侧边栏。
 - bufferline: 标签页。
 - treesitter: 语法高亮。
-- tokyonight: 主题。配置透明背景，不装自动补全太丑。
+- gruvbox-material: 主题。配置透明背景，不装自动补全太丑。
 - coc: 自动补全。个人觉得用起来比mason+lsp好用。
 - auto-pairs: 自动补全括号。
 - comment: 注释插件，注释键配置为ctrl+/。
 - telescope: 查找文件。
+- surround: 给文本两端加入、修改、删除符号。
 - dashboard: neovim起始页，更改配置后要PackerSync。
 
 Packer的下载与安装参考：`https://zhuanlan.zhihu.com/p/606116492`。
