@@ -5,16 +5,15 @@ require("keybindings")
 -- Packer插件管理
 require("plugins")
 -- 主题设置
-require("colorscheme")
+require("gruvbox")
 -- 自动命令
--- require("autocmds")
+require("autocmds")
 -- 插件配置
 require("plugin-config.nvim-tree")
 require("plugin-config.bufferline")
 require("plugin-config.nvim-treesitter")
 require("plugin-config.coc")
 require("plugin-config.comment")
+require("plugin-config.nvim-surround")
 -- require("plugin-config.dashboard") dashboard在plugins.lua中配置好即可
-require("autocmds")
-require("plugin-config.remote-sshfs")
 
