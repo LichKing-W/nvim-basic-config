@@ -21,7 +21,7 @@
 
 以及各种插件的依赖就不列出来了。
 
-Packer的下载与安装参考项目[Github主页](https://github.com/wbthomason/packer.nvim#quickstart)
+Packer的下载与安装参考项目[Github主页](https://github.com/wbthomason/packer.nvim#quickstart)。
 
 For Unix and Linux:
 ```bash
