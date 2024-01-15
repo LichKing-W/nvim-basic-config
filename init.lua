@@ -15,5 +15,9 @@ require("plugin-config.nvim-treesitter")
 require("plugin-config.coc")
 require("plugin-config.comment")
 require("plugin-config.nvim-surround")
+require("plugin-config.telescope")
+require("plugin-config.noice")
+require("plugin-config.leap")
+require("plugin-config.rainbow")
 -- require("plugin-config.dashboard") dashboard在plugins.lua中配置好即可
 
