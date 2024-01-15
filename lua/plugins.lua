@@ -31,10 +31,23 @@ return require('packer').startup(function()
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
     -- or                            , branch = '0.1.x',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { {'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep', 'sharkdp/fd'} }
     }
-  -- plenary (needed by remote ssh)
-  use "nvim-lua/plenary.nvim"
+  -- telescope project extension
+  use {
+    "ahmedkhalf/project.nvim",
+    config = function()
+        require("project_nvim").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+      exclude_dirs = {
+                    "~",
+                    "c:/Users/64343",
+                    }
+    }
+  end
+    }
   -- surround
   use({
     "kylechui/nvim-surround",
@@ -45,6 +58,21 @@ return require('packer').startup(function()
         })
     end
     })
+  -- noice 弹窗
+  use {"folke/noice.nvim",
+        requires = {"MunifTanjim/nui.nvim", "rcarriga/nvim-notify"}
+    }
+  -- delete buffer
+  use 'famiu/bufdelete.nvim'
+  -- leap
+  use 'ggandor/leap.nvim'
+  -- rainbow 括号
+  use 'HiPhish/nvim-ts-rainbow2'
+  -- file browser
+  use {
+      "nvim-telescope/telescope-file-browser.nvim",
+      requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  }
   -- dashboard
     use {
         'nvimdev/dashboard-nvim',
@@ -53,49 +81,52 @@ return require('packer').startup(function()
             require('dashboard').setup {
                 -- config
                 theme = 'hyper',
+                shortcut_type = 'number',
                 config = {
                     -- week_header = {
                     --     enable = true,
                     -- },
                     header = {
-'                               ',
-'                               ',
-'  .o888P     Y8o8Y     Y888o.  ',
-' d88888      88888      88888b ',
-'d888888b_  _d88888b_  _d888888b',
-'8888888888888888888888888888888',
-'8888888888888888888888888888888',
-'YJGS8P"Y888P"Y888P"Y888P"Y8888P',
-' Y888   \'8\'   Y8P   \'8\'   888Y ',
-' \'8o          V          o8\'  ',
-'   `                     `     ',
-'                               ',
-'                               ',
+'                                                 ',
+'                                                 ',
+'██████╗ ██╗  ██╗███╗   ██╗██╗   ██╗██╗███╗   ███╗',
+'██╔══██╗██║ ██╔╝████╗  ██║██║   ██║██║████╗ ████║',
+'██████╔╝█████╔╝ ██╔██╗ ██║██║   ██║██║██╔████╔██║',
+'██╔══██╗██╔═██╗ ██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║',
+'██████╔╝██║  ██╗██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║',
+'╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝',
+'                                                 ',
+'                                                 ',
                     }, 
-                    
-                    shortcut = {
+                    packages = {enable = false},
+                    shortcut = {  
                         { desc = '󰊳 Update', group = '@property', action = 'PackerSync', key = 'u' },
                         {
-                            icon = ' ',
-                            icon_hl = '@variable',
-                            desc = 'Files',
+                            desc = ' Files',
                             group = 'Label',
                             action = 'Telescope find_files',
                             key = 'f',
                         },
                         {
-                            desc = ' Apps',
-                            group = 'DiagnosticHint',
-                            action = 'Telescope app',
-                            key = 'a',
+                            desc = ' Projects',
+                            group = '@variable',
+                            action = 'Telescope projects',
+                            key = 'p',
                         },
                         {
-                            desc = ' dotfiles',
+                            desc = ' Plugins',
                             group = 'Number',
-                            action = 'Telescope dotfiles',
+                            action = 'edit C:\\Users\\64343\\AppData\\Local\\nvim\\lua\\plugins.lua',
                             key = 'd',
                         },
                     },
+                    project = { enable = false },
+                    mru = {limit = 9},
+                    footer = {
+                        '',
+                        '',
+                        "⚔️ Nobody dies a virgin, life fucks us all.",
+                    }
                 },
             }
         end,

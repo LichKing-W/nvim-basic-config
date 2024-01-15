@@ -1,8 +1,8 @@
-require'nvim-tree'.setup {
-    -- 关闭文件时自动关闭
-    -- auto_close = true,
-    -- 不显示 git 状态图标
-    git = {
-        enable = false
-    }
-}
+require("nvim-tree").setup({
+  sync_root_with_cwd = true,
+  respect_buf_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_root = true
+  },
+})

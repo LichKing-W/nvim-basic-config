@@ -8,12 +8,12 @@ vim.o.sidescrolloff = 8
 vim.wo.number = true
 vim.wo.relativenumber = false
 -- 高亮所在行
-vim.wo.cursorline = true
+vim.wo.cursorline = false
 -- 显示左侧图标指示列
 vim.wo.signcolumn = "yes"
 -- 右侧参考线，超过表示代码太长了，考虑换行
 -- vim.wo.colorcolumn = "80"
--- 缩进2个空格等于一个Tab
+-- 缩进4个空格等于一个Tab
 vim.o.tabstop = 4
 vim.bo.tabstop = 4
 vim.o.softtabstop = 4
@@ -28,6 +28,7 @@ vim.bo.expandtab = true
 vim.o.autoindent = true
 vim.bo.autoindent = true
 vim.o.smartindent = true
+vim.bo.smartindent = true
 -- 搜索大小写不敏感，除非包含大写
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -81,3 +82,5 @@ vim.o.showtabline = 2
 vim.o.showmode = false
 -- 配置剪切板
 vim.opt.clipboard = "unnamedplus"
+-- 配置sql的complete问题
+vim.g.omni_sql_no_default_maps = 1
