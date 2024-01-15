@@ -18,6 +18,7 @@
 - surround: 给文本两端加入、修改、删除符号。
 - dashboard: neovim起始页，更改配置后要PackerSync。
 - leap: 在nvim中跳转光标的插件。
+
 以及各种插件的依赖就不列出来了。
 
 Packer的下载与安装参考项目[Github主页](https://github.com/wbthomason/packer.nvim#quickstart)
