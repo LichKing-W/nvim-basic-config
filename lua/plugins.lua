@@ -42,8 +42,7 @@ return require('packer').startup(function()
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
       exclude_dirs = {
-                    "~",
-                    "c:/Users/64343",
+                    "~", "c:/Users/64343"
                     }
     }
   end
@@ -52,11 +51,15 @@ return require('packer').startup(function()
   use({
     "kylechui/nvim-surround",
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-    config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
-    end
+    -- config = function()
+    --     require("nvim-surround").setup({
+    --         -- Configuration here, or leave empty to use defaults
+    --         keymaps = {
+    --             visual = 'Z',
+    --             visual_line = 'gZ',
+    --         },
+    --     })
+    --end
     })
   -- noice 弹窗
   use {"folke/noice.nvim",
@@ -109,7 +112,6 @@ return require('packer').startup(function()
                         },
                         {
                             desc = ' Projects',
-                            group = '@variable',
                             action = 'Telescope projects',
                             key = 'p',
                         },
