@@ -1,6 +1,20 @@
 # Basic config for neovim on windows
-将目录内的文件clone到$env:LOCALAPPDATA中，并将文件夹重命名为nvim。
-目前包含插件:
+
+## 安装方法：
+For Windows:
+```bash
+git clone https://github.com/LichKing-W/nvim-basic-config.git $env:LOCALAPPDATA
+ren nvim-basic-config nvim
+```
+For Linux:
+```bash
+mkdir ~/.config
+git clone https://github.com/LichKing-W/nvim-basic-config.git ~/.config
+mv nvim-basic-config nvim
+```
+注意dashboard中plugin的路径需要改变。
+
+## 插件:
 - Packer: 管理插件。
 - tree: 侧边栏。
 - bufferline: 标签页。
