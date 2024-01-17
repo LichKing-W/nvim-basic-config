@@ -1,4 +1,4 @@
-# Basic config for neovim on windows
+# Basic config for neovim 
 
 ## 安装方法：
 For Windows:
