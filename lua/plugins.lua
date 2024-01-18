@@ -90,6 +90,7 @@ return require('packer').startup(function()
                     --     enable = true,
                     -- },
                     header = {
+-- https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=bk-nvim
 '                                                      ',
 '                                                      ',
 '██████╗ ██╗  ██╗     ███╗   ██╗██╗   ██╗██╗███╗   ███╗',
