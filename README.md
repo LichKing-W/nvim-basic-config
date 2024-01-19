@@ -8,10 +8,10 @@ ren nvim-basic-config nvim
 ```
 For Linux:
 ```bash
-mkdir ~/.config
-git clone https://github.com/LichKing-W/nvim-basic-config.git ~/.config
-mv nvim-basic-config nvim
+mkdir -p ~/.config/nvim
+git clone https://github.com/LichKing-W/nvim-basic-config.git ~/.config/nvim
 ```
+注意安装nodejs。
 注意dashboard中plugin的路径需要改变。
 
 ## 插件:
