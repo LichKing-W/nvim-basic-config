@@ -88,7 +88,7 @@ return require('packer').startup(function()
   -- leap
   use 'ggandor/leap.nvim'
   -- rainbow 括号
-  use 'HiPhish/nvim-ts-rainbow2'
+  use 'HiPhish/rainbow-delimiters.nvim' 
   -- file browser
   use {
       "nvim-telescope/telescope-file-browser.nvim",
