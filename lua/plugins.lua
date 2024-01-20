@@ -34,6 +34,8 @@ return require('packer').startup(function()
     'hrsh7th/vim-vsnip',
     'onsails/lspkind-nvim',
     }
+  -- rust-tool
+  use 'simrat39/rust-tools.nvim'
   -- ()autocom
   use 'jiangmiao/auto-pairs'
   -- comment
@@ -135,7 +137,7 @@ return require('packer').startup(function()
                         {
                             desc = ' Plugins',
                             group = 'Number',
-                            action = 'edit C:\\Users\\64343\\AppData\\Local\\nvim\\lua\\plugins.lua',
+                            action = 'edit ~/.config/nvim/lua/plugins.lua',
                             key = 'd',
                         },
                     },

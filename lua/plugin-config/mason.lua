@@ -8,23 +8,23 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require('lspconfig')['rust_analyzer'].setup {
   capabilities = capabilities,
-  imports = {
-      granularity = {
-          group = "module",
-      },
-      prefix = "self",
-  },
-  cargo = {
-      buildScripts = {
-          enable = true,
-      },
-  },
-  procMacro = {
-      enable = true
-  },
-    diagnostic = {
-        experimental = {enable = true}
-    },
+  -- imports = {
+  --     granularity = {
+  --         group = "module",
+  --     },
+  --     prefix = "self",
+  -- },
+  -- cargo = {
+  --     buildScripts = {
+  --         enable = true,
+  --     },
+  -- },
+  -- procMacro = {
+  --     enable = true
+  -- },
+  --   diagnostic = {
+  --       experimental = {enable = true}
+  --   },
 }
 require('lspconfig')['pyright'].setup {
   capabilities = capabilities
