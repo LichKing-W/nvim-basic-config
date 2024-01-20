@@ -3,8 +3,8 @@
 ## 安装方法：
 For Windows:
 ```bash
-git clone https://github.com/LichKing-W/nvim-basic-config.git $env:LOCALAPPDATA
-ren nvim-basic-config nvim
+md $env:LOCALAPPDATA/nvim
+git clone https://github.com/LichKing-W/nvim-basic-config.git $env:LOCALAPPDATA/nvim
 ```
 For Linux:
 ```bash
@@ -20,7 +20,7 @@ git clone https://github.com/LichKing-W/nvim-basic-config.git ~/.config/nvim
 - bufferline: 标签页。
 - treesitter: 语法高亮。
 - gruvbox-material: 主题。配置透明背景，不装自动补全太丑。
-- coc: 自动补全。个人觉得用起来比mason+lsp好用。
+- mason+lsp: 自动补全。
 - auto-pairs: 自动补全括号。
 - comment: 注释插件，注释键配置为ctrl+/。
 - telescope: 查找文件。

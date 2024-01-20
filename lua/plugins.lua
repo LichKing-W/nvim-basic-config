@@ -17,7 +17,23 @@ return require('packer').startup(function()
   -- use 'folke/tokyonight.nvim'
   use 'sainnhe/gruvbox-material'
   -- autocom
-  use {'neoclide/coc.nvim', branch = 'release'}
+  -- use {'neoclide/coc.nvim', branch = 'release'}
+  -- nvim-lspconfig
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
+  use {
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-vsnip',    -- { name = 'vsnip' }
+    'hrsh7th/vim-vsnip',
+    'onsails/lspkind-nvim',
+    }
   -- ()autocom
   use 'jiangmiao/auto-pairs'
   -- comment
