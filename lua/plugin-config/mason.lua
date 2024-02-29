@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = {"rust_analyzer", "pyright", "clangd"}
+    ensure_installed = {"rust_analyzer", "jedi_language_server", "clangd"}
 }
 
 -- Setup language servers.
@@ -26,7 +26,7 @@ require('lspconfig')['rust_analyzer'].setup {
   --       experimental = {enable = true}
   --   },
 }
-require('lspconfig')['pyright'].setup {
+require('lspconfig').jedi_language_server.setup {
   capabilities = capabilities
 }
 require('lspconfig')['clangd'].setup {

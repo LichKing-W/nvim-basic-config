@@ -17,10 +17,11 @@ require("plugin-config.nvim-cmp")
 require("plugin-config.comment")
 require("plugin-config.nvim-surround")
 require("plugin-config.telescope")
-require("plugin-config.noice")
 require("plugin-config.leap")
 require("plugin-config.rainbow")
 require("plugin-config.rusttools")
+require("plugin-config.ibl")
+require("plugin-config.mason-null-ls")
+require("plugin-config.nvim-dap")
 -- require("plugin-config.dashboard") dashboard在plugins.lua中配置好即可
-
 

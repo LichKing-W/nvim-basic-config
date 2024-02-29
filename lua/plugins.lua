@@ -79,21 +79,41 @@ return require('packer').startup(function()
     --     })
     --end
     })
-  -- noice 弹窗
-  use {"folke/noice.nvim",
-        requires = {"MunifTanjim/nui.nvim", "rcarriga/nvim-notify"}
-    }
   -- delete buffer
   use 'famiu/bufdelete.nvim'
   -- leap
   use 'ggandor/leap.nvim'
   -- rainbow 括号
-  use 'HiPhish/rainbow-delimiters.nvim' 
+  use 'HiPhish/rainbow-delimiters.nvim'
+  -- indent line
+  use "lukas-reineke/indent-blankline.nvim"
   -- file browser
   use {
       "nvim-telescope/telescope-file-browser.nvim",
       requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
+  -- ai autocomplete
+  use {
+  'Exafunction/codeium.vim',
+  config = function ()
+    -- Change '<C-g>' here to any keycode you like.
+    vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+    vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+    vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+    vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+  end
+  }
+  -- debug
+  use 'mfussenegger/nvim-dap'
+  use 'mfussenegger/nvim-dap-python'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use {
+    "jay-babu/mason-null-ls.nvim",
+      requires = {
+      "williamboman/mason.nvim",
+      "nvimtools/none-ls.nvim",
+      }
+    }
   -- dashboard
     use {
         'nvimdev/dashboard-nvim',
