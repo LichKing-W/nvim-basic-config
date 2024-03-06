@@ -16,8 +16,6 @@ return require('packer').startup(function()
   -- theme
   -- use 'folke/tokyonight.nvim'
   use 'sainnhe/gruvbox-material'
-  -- autocom
-  -- use {'neoclide/coc.nvim', branch = 'release'}
   -- nvim-lspconfig
   use {
     "williamboman/mason.nvim",
@@ -114,6 +112,19 @@ return require('packer').startup(function()
       "nvimtools/none-ls.nvim",
       }
     }
+  use {
+    "kawre/leetcode.nvim",
+        requires = {
+        "nvim-telescope/telescope.nvim",
+        "nvim-lua/plenary.nvim", -- required by telescope
+        "MunifTanjim/nui.nvim",
+
+        -- optional
+        "nvim-treesitter/nvim-treesitter",
+        -- "rcarriga/nvim-notify",
+        "nvim-tree/nvim-web-devicons",
+        }
+    }
   -- dashboard
     use {
         'nvimdev/dashboard-nvim',
@@ -150,7 +161,7 @@ return require('packer').startup(function()
                             key = 'f',
                         },
                         {
-                            desc = ' Projects',
+                            desc = ' Projects',
                             action = 'Telescope projects',
                             key = 'p',
                         },
@@ -160,13 +171,18 @@ return require('packer').startup(function()
                             action = 'edit ~/.config/nvim/lua/plugins.lua',
                             key = 'd',
                         },
+                        {
+                            desc = ' Leetcode',
+                            action = 'Leet',
+                            key = 'l',
+                        },
                     },
                     project = { enable = false },
                     mru = {limit = 9},
                     footer = {
                         '',
                         '',
-                        "⚔️ Nobody dies a virgin, life fucks us all.",
+                        "⚔️  Nobody dies a virgin, life fucks us all ⚔️ ",
                     }
                 },
             }

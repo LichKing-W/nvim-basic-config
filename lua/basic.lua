@@ -84,3 +84,14 @@ vim.o.showmode = false
 vim.opt.clipboard = "unnamedplus"
 -- 配置sql的complete问题
 vim.g.omni_sql_no_default_maps = 1
+--lua tab size 2
+vim.api.nvim_create_augroup("LuaTab", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "lua",
+  group = "LuaTab",
+  callback = function()
+    vim.bo.shiftwidth = 2
+    vim.bo.tabstop = 2
+    vim.bo.expandtab = true
+  end,
+})

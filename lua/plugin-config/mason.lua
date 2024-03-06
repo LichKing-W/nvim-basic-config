@@ -27,10 +27,24 @@ require('lspconfig')['rust_analyzer'].setup {
   --   },
 }
 require('lspconfig').jedi_language_server.setup {
-  capabilities = capabilities
+  capabilities = capabilities,
+    initializationOptions = {
+        completion = {
+            disableSnippets = flase,
+        },
+    },
 }
 require('lspconfig')['clangd'].setup {
   capabilities = capabilities
+}
+require('lspconfig').ruff_lsp.setup {
+  on_attach = on_attach,
+  init_options = {
+    settings = {
+      -- Any extra CLI arguments for `ruff` go here.
+      args = {},
+    }
+  }
 }
 
 

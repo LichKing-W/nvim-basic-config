@@ -23,5 +23,6 @@ require("plugin-config.rusttools")
 require("plugin-config.ibl")
 require("plugin-config.mason-null-ls")
 require("plugin-config.nvim-dap")
+require("plugin-config.leetcode")
 -- require("plugin-config.dashboard") dashboard在plugins.lua中配置好即可
 
