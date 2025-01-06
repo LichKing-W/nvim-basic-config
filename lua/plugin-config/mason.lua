@@ -1,50 +1,21 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = {"rust_analyzer", "jedi_language_server", "clangd"}
+    ensure_installed = {"jedi_language_server", "clangd"}
 }
 
 -- Setup language servers.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['rust_analyzer'].setup {
-  capabilities = capabilities,
-  -- imports = {
-  --     granularity = {
-  --         group = "module",
-  --     },
-  --     prefix = "self",
-  -- },
-  -- cargo = {
-  --     buildScripts = {
-  --         enable = true,
-  --     },
-  -- },
-  -- procMacro = {
-  --     enable = true
-  -- },
-  --   diagnostic = {
-  --       experimental = {enable = true}
-  --   },
-}
 require('lspconfig').jedi_language_server.setup {
   capabilities = capabilities,
     initializationOptions = {
-        completion = {
-            disableSnippets = flase,
-        },
+      completion = {
+        disableSnippets = false,
+      },
     },
 }
 require('lspconfig')['clangd'].setup {
   capabilities = capabilities
-}
-require('lspconfig').ruff_lsp.setup {
-  on_attach = on_attach,
-  init_options = {
-    settings = {
-      -- Any extra CLI arguments for `ruff` go here.
-      args = {},
-    }
-  }
 }
 
 

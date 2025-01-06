@@ -104,7 +104,7 @@ return require('packer').startup(function()
   -- debug
   use 'mfussenegger/nvim-dap'
   use 'mfussenegger/nvim-dap-python'
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
   use {
     "jay-babu/mason-null-ls.nvim",
       requires = {
@@ -167,7 +167,6 @@ return require('packer').startup(function()
                         },
                         {
                             desc = ' Plugins',
-                            group = 'Number',
                             action = 'edit ~/.config/nvim/lua/plugins.lua',
                             key = 'd',
                         },
