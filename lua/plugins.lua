@@ -1,28 +1,26 @@
-return require('packer').startup(function()
-  -- Packer
-  use 'wbthomason/packer.nvim'
+return {
   -- nvim-tree
-  use {
+    {
        'kyazdani42/nvim-tree.lua',
-       requires = 'kyazdani42/nvim-web-devicons'
-    }
+       dependencies = 'kyazdani42/nvim-web-devicons'
+    },
   -- bufferline
-  use {
-       'akinsho/bufferline.nvim', tag = "*", 
-      requires = 'nvim-tree/nvim-web-devicons'
-    }
+    {
+       'akinsho/bufferline.nvim', version = "*", 
+       dependencies = 'nvim-tree/nvim-web-devicons'
+    },
   -- treesitter
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
   -- theme
   -- use 'folke/tokyonight.nvim'
-  use 'sainnhe/gruvbox-material'
+    {'sainnhe/gruvbox-material'},
   -- nvim-lspconfig
-  use {
+    {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
-  }
-  use {
+    },
+    {
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
@@ -31,26 +29,24 @@ return require('packer').startup(function()
     'hrsh7th/cmp-vsnip',    -- { name = 'vsnip' }
     'hrsh7th/vim-vsnip',
     'onsails/lspkind-nvim',
-    }
-  -- rust-tool
-  use 'simrat39/rust-tools.nvim'
+    },
   -- ()autocom
-  use 'jiangmiao/auto-pairs'
+  {'jiangmiao/auto-pairs'},
   -- comment
-  use {
+    {
     'numToStr/Comment.nvim',
     config = function()
         require('Comment').setup()
     end
-    }
+    },
   -- Telescope
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    {
+    'nvim-telescope/telescope.nvim', version = '0.1.5',
     -- or                            , branch = '0.1.x',
-    requires = { {'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep', 'sharkdp/fd'} }
-    }
+    dependencies = { {'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep', 'sharkdp/fd'} }
+    },
   -- telescope project extension
-  use {
+    {
     "ahmedkhalf/project.nvim",
     config = function()
         require("project_nvim").setup {
@@ -62,11 +58,11 @@ return require('packer').startup(function()
                     }
     }
   end
-    }
+    },
   -- surround
-  use({
+    {
     "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
     -- config = function()
     --     require("nvim-surround").setup({
     --         -- Configuration here, or leave empty to use defaults
@@ -76,22 +72,22 @@ return require('packer').startup(function()
     --         },
     --     })
     --end
-    })
+    },
   -- delete buffer
-  use 'famiu/bufdelete.nvim'
+  {'famiu/bufdelete.nvim'},
   -- leap
-  use 'ggandor/leap.nvim'
+  {'ggandor/leap.nvim'},
   -- rainbow 括号
-  use 'HiPhish/rainbow-delimiters.nvim'
+  {'HiPhish/rainbow-delimiters.nvim'},
   -- indent line
-  use "lukas-reineke/indent-blankline.nvim"
+  {"lukas-reineke/indent-blankline.nvim"},
   -- file browser
-  use {
+    {
       "nvim-telescope/telescope-file-browser.nvim",
-      requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-  }
+      dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    },
   -- ai autocomplete
-  use {
+    {
   'Exafunction/codeium.vim',
   config = function ()
     -- Change '<C-g>' here to any keycode you like.
@@ -100,21 +96,21 @@ return require('packer').startup(function()
     vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
     vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
   end
-  }
+  },
   -- debug
-  use 'mfussenegger/nvim-dap'
-  use 'mfussenegger/nvim-dap-python'
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
-  use {
+  {'mfussenegger/nvim-dap'},
+  {'mfussenegger/nvim-dap-python'},
+  { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
+  {
     "jay-babu/mason-null-ls.nvim",
-      requires = {
+      dependencies = {
       "williamboman/mason.nvim",
       "nvimtools/none-ls.nvim",
       }
-    }
-  use {
+  },
+  {
     "kawre/leetcode.nvim",
-        requires = {
+        dependencies = {
         "nvim-telescope/telescope.nvim",
         "nvim-lua/plenary.nvim", -- required by telescope
         "MunifTanjim/nui.nvim",
@@ -124,9 +120,9 @@ return require('packer').startup(function()
         -- "rcarriga/nvim-notify",
         "nvim-tree/nvim-web-devicons",
         }
-    }
+  },
   -- dashboard
-    use {
+  {
         'nvimdev/dashboard-nvim',
         event = 'VimEnter',
         config = function()
@@ -186,6 +182,6 @@ return require('packer').startup(function()
                 },
             }
         end,
-        requires = {'nvim-tree/nvim-web-devicons'}
+        dependencies = {'nvim-tree/nvim-web-devicons'}
     }
-end)
+}

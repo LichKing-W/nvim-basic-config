@@ -4,8 +4,8 @@ require("leetcode").setup({
         enabled = true,
     },
     storage = {
-        home = "/home/bk/leetcode/leetcode",
-        cache = "/home/bk/leetcode/cache",
+        home = "/Users/huangbokai/code/leeco/leeco/",
+        cache = "/Users/huangbokai/code/leeco/cache/",
     },
     description = {
         position = "right",

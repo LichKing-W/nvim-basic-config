@@ -10,7 +10,7 @@ require('lspconfig').jedi_language_server.setup {
   capabilities = capabilities,
     initializationOptions = {
       completion = {
-        disableSnippets = false,
+        disableSnippets = true,
       },
     },
 }
